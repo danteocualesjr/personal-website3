@@ -91,33 +91,36 @@ export default function Bookshelf() {
   })
 
   return (
-    <div className="min-h-screen py-12 px-4">
+    <div className="min-h-screen py-16 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Bookshelf
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+            <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+              Bookshelf
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4">
             Books I've read, loved, and recommend
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Filters */}
-        <div className="mb-8 space-y-4">
+        <div className="mb-12 space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
               Filter by Genre
             </label>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {genres.map((genre) => (
                 <button
                   key={genre}
                   onClick={() => setSelectedGenre(genre)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                     selectedGenre === genre
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg scale-105'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg'
                   }`}
                 >
                   {genre}
@@ -127,18 +130,18 @@ export default function Bookshelf() {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">
               Filter by Status
             </label>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3">
               {statuses.map((status) => (
                 <button
                   key={status}
                   onClick={() => setSelectedStatus(status)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                     selectedStatus === status
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg scale-105'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg'
                   }`}
                 >
                   {status}
@@ -164,34 +167,34 @@ export default function Bookshelf() {
         )}
 
         {/* Stats */}
-        <div className="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="mt-16 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Reading Statistics
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+              <div className="text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent mb-2">
                 {books.filter(b => b.status === 'read').length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Books Read</div>
+              <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Books Read</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+            <div className="text-center p-6 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl border border-indigo-200 dark:border-indigo-800">
+              <div className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent mb-2">
                 {books.filter(b => b.status === 'reading').length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Currently Reading</div>
+              <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Currently Reading</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+            <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">
                 {books.filter(b => b.status === 'want-to-read').length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Want to Read</div>
+              <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Want to Read</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+            <div className="text-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl border border-gray-200 dark:border-gray-600">
+              <div className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">
                 {books.length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Total Books</div>
+              <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Total Books</div>
             </div>
           </div>
         </div>
