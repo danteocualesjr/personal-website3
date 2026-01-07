@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { getAllPosts } from '@/lib/markdown'
 
 export const metadata = {
-  title: 'Fiction | Your Name',
-  description: 'Short stories',
+  title: 'Fiction | Dante Cuales',
+  description: 'Short stories and creative writing',
 }
 
 export default async function Fiction() {

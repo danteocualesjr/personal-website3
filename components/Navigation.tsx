@@ -11,7 +11,7 @@ export default function Navigation() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="text-xl tracking-tight">
-            Your Name
+            Dante Cuales
           </Link>
           
           {/* Desktop */}

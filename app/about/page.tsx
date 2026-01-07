@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'About | Your Name',
-  description: 'About me',
+  title: 'About | Dante Cuales',
+  description: 'Founder of NativeStack AI and writer',
 }
 
 export default function About() {
@@ -13,20 +13,34 @@ export default function About() {
         
         <div className="space-y-8 text-xl leading-relaxed animate-in delay-1">
           <p>
-            I'm a developer and writer based in San Francisco. I build digital 
-            products and write about technology, creativity, and the human experience.
+            I'm the founder of{' '}
+            <a 
+              href="https://nativestack.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover-line"
+            >
+              NativeStack AI
+            </a>
+            , an AI startup focused on making artificial intelligence more accessible and practical. 
+            I lead product, engineering, and company strategy.
           </p>
           
           <p>
-            My work focuses on creating simple, functional, and beautiful experiences. 
-            I believe good design is invisible—it gets out of the way and lets 
-            people accomplish what they came to do.
+            Before starting NativeStack, I worked as a software developer building products across 
+            various domains. That experience taught me what users actually need versus what 
+            technologists think they need.
           </p>
           
           <p>
-            When I'm not coding, I'm usually reading, writing fiction, or exploring 
-            new places. I'm drawn to stories about people finding meaning in 
-            unexpected places.
+            I also write—both technical essays about building companies and products, and fiction 
+            that explores what it means to be human in an increasingly technological world. 
+            Writing helps me think clearly; sharing it helps others think with me.
+          </p>
+          
+          <p>
+            I believe the best technology feels invisible. It doesn't demand attention; it enables 
+            focus. That philosophy guides everything I build and write.
           </p>
         </div>
         
@@ -38,18 +52,27 @@ export default function About() {
           
           <div className="space-y-12">
             <div className="grid md:grid-cols-3 gap-4">
-              <p className="text-[--muted]">2022 — Present</p>
+              <p className="text-[--muted]">2023 — Present</p>
               <div className="md:col-span-2">
-                <p className="font-medium">Software Developer</p>
-                <p className="text-[--muted]">Current Company</p>
+                <p className="font-medium">Founder & CEO</p>
+                <p className="text-[--muted]">
+                  <a 
+                    href="https://nativestack.ai" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover-line"
+                  >
+                    NativeStack AI
+                  </a>
+                </p>
               </div>
             </div>
             
             <div className="grid md:grid-cols-3 gap-4">
-              <p className="text-[--muted]">2020 — 2022</p>
+              <p className="text-[--muted]">2020 — 2023</p>
               <div className="md:col-span-2">
-                <p className="font-medium">Freelance Developer</p>
-                <p className="text-[--muted]">Self-employed</p>
+                <p className="font-medium">Software Developer</p>
+                <p className="text-[--muted]">Various companies</p>
               </div>
             </div>
           </div>
@@ -78,14 +101,24 @@ export default function About() {
           </h2>
           
           <div className="space-y-4">
+            <a 
+              href="https://www.linkedin.com/in/danteocualesjr/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block hover-line w-fit"
+            >
+              LinkedIn
+            </a>
+            <a 
+              href="https://nativestack.ai" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block hover-line w-fit"
+            >
+              NativeStack AI
+            </a>
             <a href="mailto:your.email@example.com" className="block hover-line w-fit">
               your.email@example.com
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="block hover-line w-fit">
-              GitHub
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block hover-line w-fit">
-              Twitter
             </a>
           </div>
         </div>

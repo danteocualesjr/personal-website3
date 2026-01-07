@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           <div>
             <Link href="/" className="text-xl tracking-tight">
-              Your Name
+              Dante Cuales
             </Link>
           </div>
           
@@ -23,9 +23,10 @@ export default function Footer() {
               <Link href="/contact" className="block text-[--muted] hover:text-[--text] transition-colors">Contact</Link>
             </div>
             <div className="space-y-4">
+              <a href="https://nativestack.ai" target="_blank" rel="noopener noreferrer" className="block text-[--muted] hover:text-[--text] transition-colors">NativeStack AI</a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="block text-[--muted] hover:text-[--text] transition-colors">GitHub</a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block text-[--muted] hover:text-[--text] transition-colors">Twitter</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block text-[--muted] hover:text-[--text] transition-colors">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/danteocualesjr/" target="_blank" rel="noopener noreferrer" className="block text-[--muted] hover:text-[--text] transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>

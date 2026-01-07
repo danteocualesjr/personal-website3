@@ -4,8 +4,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Your Name',
-  description: 'Developer & Writer',
+  title: 'Dante Cuales | Founder of NativeStack AI',
+  description: 'Founder of NativeStack AI and writer exploring ideas through technology and words',
 }
 
 export default function RootLayout({

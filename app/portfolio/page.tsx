@@ -1,43 +1,44 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Work | Your Name',
-  description: 'Selected projects',
+  title: 'Work | Dante Cuales',
+  description: 'Projects and ventures',
 }
 
 const projects = [
   {
+    title: 'NativeStack AI',
+    description: 'AI startup making artificial intelligence more accessible and practical. Leading product, engineering, and company strategy.',
+    tech: 'AI, Product, Strategy',
+    year: '2023 — Present',
+    link: 'https://nativestack.ai',
+  },
+  {
     title: 'E-Commerce Platform',
     description: 'Full-stack e-commerce with authentication, payments, and admin dashboard.',
     tech: 'Next.js, TypeScript, PostgreSQL, Stripe',
-    year: '2024',
+    year: '2023',
     link: 'https://example.com',
   },
   {
     title: 'Task Management App',
     description: 'Collaborative task management with real-time updates.',
     tech: 'React, Node.js, Socket.io, MongoDB',
-    year: '2023',
+    year: '2022',
     link: 'https://example.com',
   },
   {
     title: 'Weather Dashboard',
     description: 'Location-based weather forecasts with interactive maps.',
     tech: 'React, Tailwind CSS, Weather API',
-    year: '2023',
+    year: '2022',
     link: 'https://example.com',
-  },
-  {
-    title: 'Blog Platform',
-    description: 'Modern blog with markdown support and SEO optimization.',
-    tech: 'Next.js, MDX',
-    year: '2023',
   },
   {
     title: 'API Integration Service',
     description: 'Microservice for third-party API integration with caching.',
     tech: 'Node.js, Express, Redis, Docker',
-    year: '2022',
+    year: '2021',
   },
 ]
 

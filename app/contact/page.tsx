@@ -84,14 +84,27 @@ export default function Contact() {
             <div>
               <p className="text-sm text-[--muted] mb-2">Social</p>
               <div className="space-y-2">
+                <a 
+                  href="https://www.linkedin.com/in/danteocualesjr/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block hover-line w-fit"
+                >
+                  LinkedIn
+                </a>
+                <a 
+                  href="https://nativestack.ai" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block hover-line w-fit"
+                >
+                  NativeStack AI
+                </a>
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="block hover-line w-fit">
                   GitHub
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block hover-line w-fit">
                   Twitter
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block hover-line w-fit">
-                  LinkedIn
                 </a>
               </div>
             </div>

@@ -7,9 +7,16 @@ export default function Home() {
       <section className="min-h-[80vh] flex items-center px-6">
         <div className="max-w-5xl mx-auto w-full">
           <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 animate-in">
-            Developer & writer creating thoughtful 
-            digital experiences and exploring ideas 
-            through words.
+            Founder of{' '}
+            <a 
+              href="https://nativestack.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover-line"
+            >
+              NativeStack AI
+            </a>
+            {' '}and writer exploring ideas through technology and words.
           </h1>
           <div className="flex gap-6 animate-in delay-2">
             <Link href="/portfolio" className="hover-line">
@@ -30,12 +37,18 @@ export default function Home() {
           </h2>
           
           <div className="space-y-16">
-            <Link href="/portfolio" className="group block">
-              <p className="text-[--muted] mb-2">2024</p>
+            <a 
+              href="https://nativestack.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group block"
+            >
+              <p className="text-[--muted] mb-2">2023 — Present</p>
               <h3 className="text-3xl md:text-4xl group-hover:opacity-60 transition-opacity">
-                E-Commerce Platform
+                NativeStack AI
               </h3>
-            </Link>
+              <p className="text-[--muted] mt-2">AI startup making artificial intelligence more accessible</p>
+            </a>
             
             <Link href="/portfolio" className="group block">
               <p className="text-[--muted] mb-2">2023</p>
@@ -45,7 +58,7 @@ export default function Home() {
             </Link>
             
             <Link href="/portfolio" className="group block">
-              <p className="text-[--muted] mb-2">2023</p>
+              <p className="text-[--muted] mb-2">2022</p>
               <h3 className="text-3xl md:text-4xl group-hover:opacity-60 transition-opacity">
                 Weather Dashboard
               </h3>

@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const story = await getPostBySlug('fiction', params.slug)
   if (!story) return { title: 'Not Found' }
-  return { title: `${story.title} | Your Name` }
+  return { title: `${story.title} | Dante Cuales` }
 }
 
 export default async function FictionStory({ params }: { params: { slug: string } }) {
