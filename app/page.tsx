@@ -4,125 +4,235 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-[80vh] flex items-center px-6">
+      <section className="min-h-[85vh] flex items-center px-6 pt-8">
         <div className="max-w-5xl mx-auto w-full">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 animate-in">
-            Founder of{' '}
+          <p className="text-[--muted] text-sm tracking-wider uppercase mb-6 animate-in">
+            Founder · Writer
+          </p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-12 animate-in delay-1">
+            Building{' '}
             <a 
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover-line"
+              className="hover-line font-medium"
             >
               NativeStack AI
             </a>
-            {' '}and writer exploring ideas through technology and words.
+            {' '}and exploring ideas through technology and words.
           </h1>
-          <div className="flex gap-6 animate-in delay-2">
-            <Link href="/portfolio" className="hover-line">
+          <div className="flex flex-wrap gap-6 text-lg animate-in delay-2">
+            <Link 
+              href="/about" 
+              className="hover-line"
+            >
+              About me
+            </Link>
+            <span className="text-[--muted]">·</span>
+            <Link 
+              href="/portfolio" 
+              className="hover-line"
+            >
               View work
             </Link>
-            <Link href="/about" className="hover-line">
-              About me
+            <span className="text-[--muted]">·</span>
+            <Link 
+              href="/blog" 
+              className="hover-line"
+            >
+              Read writing
             </Link>
           </div>
         </div>
       </section>
 
       {/* Selected Work */}
-      <section className="py-32 px-6 border-t border-[--border]">
+      <section className="py-24 px-6 border-t border-[--border]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-sm tracking-widest text-[--muted] uppercase mb-16">
-            Selected Work
-          </h2>
+          <div className="flex items-baseline justify-between mb-16">
+            <h2 className="text-sm tracking-widest text-[--muted] uppercase">
+              Selected Work
+            </h2>
+            <Link 
+              href="/portfolio" 
+              className="text-sm text-[--muted] hover:text-[--text] transition-colors hover-line"
+            >
+              View all →
+            </Link>
+          </div>
           
-          <div className="space-y-16">
+          <div className="space-y-12">
             <a 
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group block"
+              className="group block py-8 border-b border-[--border] hover:border-[--text]/20 transition-colors"
             >
-              <p className="text-[--muted] mb-2">2023 — Present</p>
-              <h3 className="text-3xl md:text-4xl group-hover:opacity-60 transition-opacity">
-                NativeStack AI
-              </h3>
-              <p className="text-[--muted] mt-2">AI startup making artificial intelligence more accessible</p>
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <p className="text-[--muted] text-sm">2023 — Present</p>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-3xl md:text-4xl mb-3 group-hover:opacity-70 transition-opacity">
+                    NativeStack AI
+                  </h3>
+                  <p className="text-[--muted] text-lg leading-relaxed mb-4">
+                    AI startup making artificial intelligence more accessible and practical. 
+                    Leading product, engineering, and company strategy.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm text-[--muted] group-hover:text-[--text] transition-colors">
+                    Visit website
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                  </span>
+                </div>
+              </div>
             </a>
             
-            <Link href="/portfolio" className="group block">
-              <p className="text-[--muted] mb-2">2023</p>
-              <h3 className="text-3xl md:text-4xl group-hover:opacity-60 transition-opacity">
-                Task Management App
-              </h3>
+            <Link 
+              href="/portfolio" 
+              className="group block py-8 border-b border-[--border] hover:border-[--text]/20 transition-colors"
+            >
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <p className="text-[--muted] text-sm">2023</p>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-3xl md:text-4xl mb-3 group-hover:opacity-70 transition-opacity">
+                    Task Management App
+                  </h3>
+                  <p className="text-[--muted] text-lg leading-relaxed">
+                    Collaborative task management with real-time updates and team features.
+                  </p>
+                </div>
+              </div>
             </Link>
             
-            <Link href="/portfolio" className="group block">
-              <p className="text-[--muted] mb-2">2022</p>
-              <h3 className="text-3xl md:text-4xl group-hover:opacity-60 transition-opacity">
-                Weather Dashboard
-              </h3>
-            </Link>
-          </div>
-          
-          <div className="mt-16">
-            <Link href="/portfolio" className="hover-line">
-              All projects →
+            <Link 
+              href="/portfolio" 
+              className="group block py-8 border-b border-[--border] hover:border-[--text]/20 transition-colors last:border-0"
+            >
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <p className="text-[--muted] text-sm">2022</p>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-3xl md:text-4xl mb-3 group-hover:opacity-70 transition-opacity">
+                    Weather Dashboard
+                  </h3>
+                  <p className="text-[--muted] text-lg leading-relaxed">
+                    Location-based weather forecasts with interactive maps and data visualization.
+                  </p>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Writing */}
-      <section className="py-32 px-6 border-t border-[--border]">
+      <section className="py-24 px-6 border-t border-[--border]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-sm tracking-widest text-[--muted] uppercase mb-16">
-            Recent Writing
-          </h2>
-          
-          <div className="space-y-12">
-            <Link href="/blog/getting-started-with-nextjs" className="group block">
-              <p className="text-[--muted] text-sm mb-2">January 2024</p>
-              <h3 className="text-2xl md:text-3xl group-hover:opacity-60 transition-opacity">
-                Getting Started with Next.js
-              </h3>
-            </Link>
-            
-            <Link href="/blog/art-of-clean-code" className="group block">
-              <p className="text-[--muted] text-sm mb-2">January 2024</p>
-              <h3 className="text-2xl md:text-3xl group-hover:opacity-60 transition-opacity">
-                The Art of Clean Code
-              </h3>
-            </Link>
-            
-            <Link href="/blog/journey-into-web-development" className="group block">
-              <p className="text-[--muted] text-sm mb-2">January 2024</p>
-              <h3 className="text-2xl md:text-3xl group-hover:opacity-60 transition-opacity">
-                My Journey into Web Development
-              </h3>
+          <div className="flex items-baseline justify-between mb-16">
+            <h2 className="text-sm tracking-widest text-[--muted] uppercase">
+              Recent Writing
+            </h2>
+            <Link 
+              href="/blog" 
+              className="text-sm text-[--muted] hover:text-[--text] transition-colors hover-line"
+            >
+              View all →
             </Link>
           </div>
           
-          <div className="mt-16">
-            <Link href="/blog" className="hover-line">
-              All posts →
+          <div className="space-y-10">
+            <Link 
+              href="/blog/getting-started-with-nextjs" 
+              className="group block py-6 border-b border-[--border] hover:border-[--text]/20 transition-colors"
+            >
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <p className="text-[--muted] text-sm">January 2024</p>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-2xl md:text-3xl mb-2 group-hover:opacity-70 transition-opacity">
+                    Getting Started with Next.js
+                  </h3>
+                  <p className="text-[--muted]">
+                    A comprehensive guide to building modern web applications with Next.js.
+                  </p>
+                </div>
+              </div>
+            </Link>
+            
+            <Link 
+              href="/blog/art-of-clean-code" 
+              className="group block py-6 border-b border-[--border] hover:border-[--text]/20 transition-colors"
+            >
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <p className="text-[--muted] text-sm">January 2024</p>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-2xl md:text-3xl mb-2 group-hover:opacity-70 transition-opacity">
+                    The Art of Clean Code
+                  </h3>
+                  <p className="text-[--muted]">
+                    Principles and practices for writing maintainable and elegant code.
+                  </p>
+                </div>
+              </div>
+            </Link>
+            
+            <Link 
+              href="/blog/journey-into-web-development" 
+              className="group block py-6 border-b border-[--border] hover:border-[--text]/20 transition-colors last:border-0"
+            >
+              <div className="grid md:grid-cols-12 gap-6 items-start">
+                <div className="md:col-span-3">
+                  <p className="text-[--muted] text-sm">January 2024</p>
+                </div>
+                <div className="md:col-span-9">
+                  <h3 className="text-2xl md:text-3xl mb-2 group-hover:opacity-70 transition-opacity">
+                    My Journey into Web Development
+                  </h3>
+                  <p className="text-[--muted]">
+                    Reflecting on the path that led me to become a web developer.
+                  </p>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Contact CTA */}
       <section className="py-32 px-6 border-t border-[--border]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl mb-8">
-            Let's work together.
-          </h2>
-          <p className="text-[--muted] text-xl mb-8 max-w-xl">
-            Have a project in mind? I'd love to hear about it.
-          </p>
-          <Link href="/contact" className="hover-line text-xl">
-            Get in touch →
-          </Link>
+          <div className="max-w-3xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">
+              Let's work together.
+            </h2>
+            <p className="text-[--muted] text-xl mb-10 leading-relaxed">
+              Have a project in mind, want to collaborate, or just want to say hello? 
+              I'd love to hear from you.
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <Link 
+                href="/contact" 
+                className="hover-line text-lg"
+              >
+                Get in touch →
+              </Link>
+              <a 
+                href="https://www.linkedin.com/in/danteocualesjr/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover-line text-lg text-[--muted] hover:text-[--text] transition-colors"
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
