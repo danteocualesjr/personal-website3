@@ -7,9 +7,8 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/portfolio', label: 'Work' },
     { href: '/blog', label: 'Blog' },
     { href: '/fiction', label: 'Fiction' },
     { href: '/bookshelf', label: 'Bookshelf' },
@@ -17,20 +16,23 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-200/50 dark:border-gray-800/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f5]/90 dark:bg-[#0f0f0f]/90 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent hover:scale-105 transition-transform">
+          <Link 
+            href="/" 
+            className="font-serif text-2xl font-semibold text-gray-900 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+          >
             Your Name
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-1">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 font-medium"
+                className="text-sm uppercase tracking-widest text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors link-underline"
               >
                 {item.label}
               </Link>
@@ -39,47 +41,35 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-gray-700 dark:text-gray-300"
+            className="md:hidden text-gray-900 dark:text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <div className="w-6 h-5 relative flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </div>
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+      <div className={`md:hidden overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <div className="px-6 py-8 bg-[#faf8f5] dark:bg-[#0f0f0f] border-t border-gray-200 dark:border-gray-800">
+          {navItems.map((item, index) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block py-4 text-lg text-gray-900 dark:text-white hover:text-amber-600 dark:hover:text-amber-400 transition-colors border-b border-gray-100 dark:border-gray-800 last:border-0"
+              onClick={() => setIsOpen(false)}
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   )
 }
-

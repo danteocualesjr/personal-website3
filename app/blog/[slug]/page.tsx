@@ -32,53 +32,58 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   }
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Back Link */}
-        <Link
-          href="/blog"
-          className="text-blue-600 dark:text-blue-400 hover:underline mb-8 inline-block"
-        >
-          ← Back to Blog
-        </Link>
+    <div className="min-h-screen pt-20">
+      <article className="py-20 px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          {/* Back Link */}
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-sm uppercase tracking-widest text-gray-500 dark:text-gray-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors mb-12"
+          >
+            <span className="mr-2">←</span>
+            Back to Blog
+          </Link>
 
-        {/* Article */}
-        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 md:p-12 border border-gray-200 dark:border-gray-700">
-          <header className="mb-8">
-            <time className="text-sm text-gray-500 dark:text-gray-400">
+          {/* Header */}
+          <header className="mb-12">
+            <p className="text-amber-600 dark:text-amber-400 text-sm mb-4">
               {new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
               })}
-            </time>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4 mb-4">
+            </p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 dark:text-white leading-[1.1] mb-6">
               {post.title}
             </h1>
             {post.excerpt && (
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
                 {post.excerpt}
               </p>
             )}
           </header>
 
+          {/* Divider */}
+          <div className="w-16 h-px bg-amber-500 dark:bg-amber-400 mb-12"></div>
+
+          {/* Content */}
           <div
             className="prose prose-lg dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-        </article>
 
-        {/* Navigation */}
-        <div className="mt-8 flex justify-between">
-          <Link
-            href="/blog"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            ← Back to Blog
-          </Link>
+          {/* Footer */}
+          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+            <Link
+              href="/blog"
+              className="inline-flex items-center text-sm uppercase tracking-widest text-gray-500 dark:text-gray-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+            >
+              <span className="mr-2">←</span>
+              Back to Blog
+            </Link>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
   )
 }
-

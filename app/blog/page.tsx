@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getAllPosts, PostData } from '@/lib/markdown'
+import { getAllPosts } from '@/lib/markdown'
 
 export const metadata = {
   title: 'Blog | Personal Website',
@@ -10,72 +10,74 @@ export default async function Blog() {
   const posts = await getAllPosts('blog')
 
   return (
-    <div className="min-h-screen py-16 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
-            <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Blog
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4">
-            Thoughts, insights, and updates
+    <div className="min-h-screen pt-20">
+      {/* Hero */}
+      <section className="py-20 px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-amber-600 dark:text-amber-400 text-sm uppercase tracking-[0.3em] mb-6 animate-slide-up">
+            Blog
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto rounded-full"></div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium text-gray-900 dark:text-white leading-[1.1] mb-8 animate-slide-up animation-delay-100">
+            Thoughts &<br />
+            <span className="italic">reflections</span>
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl animate-slide-up animation-delay-200">
+            Essays on technology, creativity, and the intersection of both.
+          </p>
         </div>
+      </section>
 
-        {/* Blog Posts List */}
-        {posts.length === 0 ? (
-          <div className="text-center py-16">
-            <div className="text-6xl mb-4">📝</div>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              No blog posts yet. Check back soon!
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-8">
-            {posts.map((post, index) => (
-              <article
-                key={post.slug}
-                className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="mb-4">
-                  <time className="text-sm text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-wide">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </time>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-                  >
-                    {post.title}
-                  </Link>
-                </h2>
-                {post.excerpt && (
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                )}
+      {/* Posts */}
+      <section className="px-6 lg:px-8 pb-20">
+        <div className="max-w-6xl mx-auto">
+          {posts.length === 0 ? (
+            <div className="py-20 text-center">
+              <p className="text-gray-600 dark:text-gray-400 text-lg">
+                No posts yet. Check back soon.
+              </p>
+            </div>
+          ) : (
+            <div className="divide-y divide-gray-200 dark:divide-gray-800">
+              {posts.map((post, index) => (
                 <Link
+                  key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-bold group-hover:translate-x-2 transition-transform"
+                  className="group block py-12 first:pt-0"
                 >
-                  Read More
-                  <span className="ml-2">→</span>
+                  <div className="grid lg:grid-cols-12 gap-6 items-start">
+                    <div className="lg:col-span-3">
+                      <p className="text-sm text-gray-500 dark:text-gray-500">
+                        {new Date(post.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </p>
+                    </div>
+                    
+                    <div className="lg:col-span-8">
+                      <h2 className="font-serif text-2xl md:text-3xl text-gray-900 dark:text-white mb-4 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                        {post.title}
+                      </h2>
+                      {post.excerpt && (
+                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                      )}
+                    </div>
+                    
+                    <div className="lg:col-span-1 flex justify-end">
+                      <span className="text-amber-600 dark:text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity text-2xl">
+                        →
+                      </span>
+                    </div>
+                  </div>
                 </Link>
-              </article>
-            ))}
-          </div>
-        )}
-      </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   )
 }
-

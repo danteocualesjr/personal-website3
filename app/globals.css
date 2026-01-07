@@ -1,173 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf8f5;
+  --foreground: #1a1a1a;
+  --accent: #c9a227;
+  --accent-dark: #b8941f;
+  --muted: #6b6b6b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f0f0f;
+    --foreground: #f5f5f5;
+    --accent: #d4af37;
+    --accent-dark: #c9a227;
+    --muted: #8a8a8a;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Serif headings */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Selection styling */
+::selection {
+  background: var(--accent);
+  color: white;
 }
 
-/* Custom animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+@keyframes slideInLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+@keyframes underlineGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 0.5s ease-out;
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
 }
 
-/* Glassmorphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
 }
 
-.dark .glass {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.animation-delay-100 { animation-delay: 0.1s; opacity: 0; }
+.animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
+.animation-delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+/* Link underline effect */
+.link-underline {
+  position: relative;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
 }
 
-.dark .gradient-text {
-  background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-/* Prose styles for markdown content */
+/* Prose styles for markdown */
 .prose {
   @apply text-gray-700 dark:text-gray-300;
+  font-size: 1.125rem;
+  line-height: 1.8;
 }
 
 .prose h1 {
-  @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-8 mb-4;
+  font-family: 'Playfair Display', Georgia, serif;
+  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-12 mb-6;
 }
 
 .prose h2 {
-  @apply text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mt-6 mb-3;
+  font-family: 'Playfair Display', Georgia, serif;
+  @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-10 mb-4;
 }
 
 .prose h3 {
-  @apply text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mt-4 mb-2;
+  font-family: 'Playfair Display', Georgia, serif;
+  @apply text-2xl font-semibold text-gray-900 dark:text-white mt-8 mb-3;
 }
 
 .prose p {
-  @apply mb-4 leading-relaxed;
+  @apply mb-6 leading-relaxed;
 }
 
 .prose ul, .prose ol {
-  @apply mb-4 ml-6;
+  @apply mb-6 ml-6;
 }
 
 .prose li {
-  @apply mb-2;
+  @apply mb-3;
 }
 
 .prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono;
+  @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono;
 }
 
 .prose pre {
-  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4;
+  @apply bg-gray-900 dark:bg-gray-950 text-gray-100 p-6 rounded-lg overflow-x-auto mb-6;
 }
 
 .prose pre code {
-  @apply bg-transparent p-0;
+  @apply bg-transparent p-0 text-sm;
 }
 
 .prose blockquote {
-  @apply border-l-4 border-blue-500 pl-4 italic my-4 text-gray-600 dark:text-gray-400;
+  font-family: 'Playfair Display', Georgia, serif;
+  @apply border-l-2 border-amber-500 pl-6 italic my-8 text-xl text-gray-600 dark:text-gray-400;
 }
 
 .prose a {
-  @apply text-blue-600 dark:text-blue-400 hover:underline;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.prose a:hover {
+  color: var(--accent-dark);
 }
 
 .prose strong {
   @apply font-semibold text-gray-900 dark:text-white;
 }
 
-.prose em {
-  @apply italic;
+.prose hr {
+  @apply my-12 border-gray-200 dark:border-gray-800;
 }
 
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
