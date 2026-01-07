@@ -1,24 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #faf8f5;
-  --foreground: #1a1a1a;
-  --accent: #c9a227;
-  --accent-dark: #b8941f;
-  --muted: #6b6b6b;
+  --bg: #fcfcfc;
+  --text: #111;
+  --muted: #666;
+  --border: #e5e5e5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f0f0f;
-    --foreground: #f5f5f5;
-    --accent: #d4af37;
-    --accent-dark: #c9a227;
-    --muted: #8a8a8a;
+    --bg: #111;
+    --text: #fafafa;
+    --muted: #888;
+    --border: #333;
   }
 }
 
@@ -31,41 +29,30 @@ html {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
 }
 
-/* Serif headings */
-.font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-/* Selection styling */
 ::selection {
-  background: var(--accent);
-  color: white;
+  background: var(--text);
+  color: var(--bg);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--muted);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Animations */
@@ -77,7 +64,7 @@ body {
 @keyframes slideUp {
   from { 
     opacity: 0; 
-    transform: translateY(40px); 
+    transform: translateY(20px); 
   }
   to { 
     opacity: 1; 
@@ -85,135 +72,98 @@ body {
   }
 }
 
-@keyframes slideInLeft {
-  from { 
-    opacity: 0; 
-    transform: translateX(-30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0); 
-  }
+.animate-in {
+  animation: slideUp 0.8s ease forwards;
 }
 
-@keyframes underlineGrow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slideUp 0.8s ease-out forwards;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-
-.animation-delay-100 { animation-delay: 0.1s; opacity: 0; }
-.animation-delay-200 { animation-delay: 0.2s; opacity: 0; }
-.animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
-.animation-delay-400 { animation-delay: 0.4s; opacity: 0; }
-.animation-delay-500 { animation-delay: 0.5s; opacity: 0; }
-
-/* Link underline effect */
-.link-underline {
+/* Hover underline */
+.hover-line {
   position: relative;
+  display: inline;
 }
 
-.link-underline::after {
+.hover-line::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 1px;
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-underline:hover::after {
+.hover-line:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-/* Prose styles for markdown */
+/* Prose */
 .prose {
-  @apply text-gray-700 dark:text-gray-300;
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.9;
+  color: var(--text);
 }
 
-.prose h1 {
-  font-family: 'Playfair Display', Georgia, serif;
-  @apply text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-12 mb-6;
+.prose h1, .prose h2, .prose h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
-.prose h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-10 mb-4;
-}
-
-.prose h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  @apply text-2xl font-semibold text-gray-900 dark:text-white mt-8 mb-3;
-}
+.prose h1 { font-size: 2.5rem; }
+.prose h2 { font-size: 2rem; }
+.prose h3 { font-size: 1.5rem; }
 
 .prose p {
-  @apply mb-6 leading-relaxed;
-}
-
-.prose ul, .prose ol {
-  @apply mb-6 ml-6;
-}
-
-.prose li {
-  @apply mb-3;
-}
-
-.prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono;
-}
-
-.prose pre {
-  @apply bg-gray-900 dark:bg-gray-950 text-gray-100 p-6 rounded-lg overflow-x-auto mb-6;
-}
-
-.prose pre code {
-  @apply bg-transparent p-0 text-sm;
-}
-
-.prose blockquote {
-  font-family: 'Playfair Display', Georgia, serif;
-  @apply border-l-2 border-amber-500 pl-6 italic my-8 text-xl text-gray-600 dark:text-gray-400;
+  margin-bottom: 1.5rem;
 }
 
 .prose a {
-  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.prose a:hover {
-  color: var(--accent-dark);
+.prose blockquote {
+  font-style: italic;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--border);
+  margin: 2rem 0;
 }
 
-.prose strong {
-  @apply font-semibold text-gray-900 dark:text-white;
+.prose code {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.875em;
+  background: var(--border);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
 }
 
-.prose hr {
-  @apply my-12 border-gray-200 dark:border-gray-800;
+.prose pre {
+  background: #1a1a1a;
+  color: #fafafa;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  font-size: 0.875rem;
 }
 
-/* Utility classes */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose ul, .prose ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
 }

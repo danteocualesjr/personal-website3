@@ -4,8 +4,8 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Your Name | Developer & Writer',
-  description: 'Developer and writer crafting digital experiences and stories that matter.',
+  title: 'Your Name',
+  description: 'Developer & Writer',
 }
 
 export default function RootLayout({
@@ -15,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-[#faf8f5] dark:bg-[#0f0f0f]">
+      <body className="min-h-screen flex flex-col">
         <Navigation />
-        <main className="flex-grow">
+        <main className="flex-grow pt-20">
           {children}
         </main>
         <Footer />
@@ -25,4 +25,3 @@ export default function RootLayout({
     </html>
   )
 }
-
