@@ -5,20 +5,20 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="px-6 py-20">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl mb-16 animate-in">
+    <div className="px-6 py-24 pt-32">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-20 animate-in">
           About
         </h1>
         
-        <div className="space-y-8 text-xl leading-relaxed animate-in delay-1">
+        <div className="space-y-10 text-xl md:text-2xl leading-relaxed animate-in delay-1">
           <p>
             I'm the founder of{' '}
             <a 
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover-line"
+              className="hover-line font-medium italic"
             >
               NativeStack AI
             </a>
@@ -45,17 +45,19 @@ export default function About() {
         </div>
         
         {/* Experience */}
-        <div className="mt-32">
-          <h2 className="text-sm tracking-widest text-[--muted] uppercase mb-12">
+        <div className="mt-40">
+          <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase mb-16 font-medium">
             Experience
           </h2>
           
-          <div className="space-y-12">
-            <div className="grid md:grid-cols-3 gap-4">
-              <p className="text-[--muted]">2023 — Present</p>
-              <div className="md:col-span-2">
-                <p className="font-medium">Founder & CEO</p>
-                <p className="text-[--muted]">
+          <div className="space-y-0">
+            <div className="grid md:grid-cols-12 gap-8 py-8 border-b border-[--border]">
+              <div className="md:col-span-3">
+                <p className="text-[--muted] text-sm font-medium">2023 — Present</p>
+              </div>
+              <div className="md:col-span-9">
+                <p className="text-xl md:text-2xl mb-2">Founder & CEO</p>
+                <p className="text-[--muted] text-lg">
                   <a 
                     href="https://nativestack.ai" 
                     target="_blank" 
@@ -68,23 +70,25 @@ export default function About() {
               </div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-4">
-              <p className="text-[--muted]">2020 — 2023</p>
-              <div className="md:col-span-2">
-                <p className="font-medium">Software Developer</p>
-                <p className="text-[--muted]">Various companies</p>
+            <div className="grid md:grid-cols-12 gap-8 py-8 border-b border-[--border] last:border-0">
+              <div className="md:col-span-3">
+                <p className="text-[--muted] text-sm font-medium">2020 — 2023</p>
+              </div>
+              <div className="md:col-span-9">
+                <p className="text-xl md:text-2xl mb-2">Software Developer</p>
+                <p className="text-[--muted] text-lg">Various companies</p>
               </div>
             </div>
           </div>
         </div>
         
         {/* Skills */}
-        <div className="mt-32">
-          <h2 className="text-sm tracking-widest text-[--muted] uppercase mb-12">
+        <div className="mt-40">
+          <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase mb-16 font-medium">
             Skills
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-4 text-[--muted]">
+          <div className="grid md:grid-cols-2 gap-x-20 gap-y-6 text-lg text-[--muted]">
             <p>JavaScript / TypeScript</p>
             <p>React / Next.js</p>
             <p>Node.js</p>
@@ -95,17 +99,17 @@ export default function About() {
         </div>
         
         {/* Connect */}
-        <div className="mt-32">
-          <h2 className="text-sm tracking-widest text-[--muted] uppercase mb-12">
+        <div className="mt-40">
+          <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase mb-16 font-medium">
             Connect
           </h2>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <a 
               href="https://www.linkedin.com/in/danteocualesjr/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block hover-line w-fit"
+              className="block hover-line text-xl w-fit"
             >
               LinkedIn
             </a>
@@ -113,11 +117,14 @@ export default function About() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block hover-line w-fit"
+              className="block hover-line text-xl w-fit"
             >
               NativeStack AI
             </a>
-            <a href="mailto:your.email@example.com" className="block hover-line w-fit">
+            <a 
+              href="mailto:your.email@example.com" 
+              className="block hover-line text-xl w-fit"
+            >
               your.email@example.com
             </a>
           </div>

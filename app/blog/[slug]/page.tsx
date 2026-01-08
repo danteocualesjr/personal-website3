@@ -18,37 +18,48 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   if (!post) notFound()
 
   return (
-    <div className="px-6 py-20">
-      <article className="max-w-3xl mx-auto">
+    <div className="px-6 py-24 pt-32">
+      <article className="max-w-4xl mx-auto">
         <Link 
           href="/blog" 
-          className="text-[--muted] hover:text-[--text] transition-colors mb-16 block"
+          className="inline-flex items-center gap-2 text-[--muted] hover:text-[--text] transition-colors duration-300 mb-16 hover-line"
         >
-          ← Back
+          <span>←</span>
+          Back to Writing
         </Link>
         
         <header className="mb-16">
-          <p className="text-[--muted] mb-4">
+          <p className="text-[--muted] text-sm mb-6 uppercase tracking-wider">
             {new Date(post.date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
             })}
           </p>
-          <h1 className="text-4xl md:text-5xl mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.08] mb-8">
             {post.title}
           </h1>
           {post.excerpt && (
-            <p className="text-xl text-[--muted]">
+            <p className="text-xl md:text-2xl text-[--muted] leading-relaxed">
               {post.excerpt}
             </p>
           )}
         </header>
         
         <div 
-          className="prose"
+          className="prose prose-lg"
           dangerouslySetInnerHTML={{ __html: post.content }} 
         />
+        
+        <footer className="mt-20 pt-12 border-t border-[--border]">
+          <Link 
+            href="/blog" 
+            className="inline-flex items-center gap-2 text-[--muted] hover:text-[--text] transition-colors duration-300 hover-line"
+          >
+            <span>←</span>
+            More writing
+          </Link>
+        </footer>
       </article>
     </div>
   )
