@@ -38,7 +38,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--text] focus:outline-none transition-colors duration-300 text-lg"
+                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg"
                 placeholder="Your name"
               />
             </div>
@@ -52,7 +52,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--text] focus:outline-none transition-colors duration-300 text-lg"
+                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg"
                 placeholder="your@email.com"
               />
             </div>
@@ -66,19 +66,19 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
                 rows={6}
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--text] focus:outline-none transition-colors duration-300 resize-none text-lg"
+                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 resize-none text-lg"
                 placeholder="Tell me about your project..."
               />
             </div>
             
             {status === 'sent' && (
-              <p className="text-lg text-[--muted]">Message sent. I'll be in touch.</p>
+              <p className="text-lg text-[--accent]">Message sent. I'll be in touch.</p>
             )}
             
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="hover-line text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="hover-line text-lg text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {status === 'sending' ? 'Sending...' : 'Send message'}
             </button>
@@ -89,7 +89,10 @@ export default function Contact() {
               <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider">
                 Email
               </p>
-              <a href="mailto:your.email@example.com" className="hover-line text-xl">
+              <a 
+                href="mailto:your.email@example.com" 
+                className="hover-line text-xl text-[--muted] hover:text-[--accent] transition-colors duration-300"
+              >
                 your.email@example.com
               </a>
             </div>
@@ -103,7 +106,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/danteocualesjr/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit"
+                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
                 >
                   LinkedIn
                 </a>
@@ -111,7 +114,7 @@ export default function Contact() {
                   href="https://nativestack.ai" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit"
+                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
                 >
                   NativeStack AI
                 </a>
@@ -119,7 +122,7 @@ export default function Contact() {
                   href="https://github.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit"
+                  className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-300"
                 >
                   GitHub
                 </a>

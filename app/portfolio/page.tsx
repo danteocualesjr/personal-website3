@@ -59,23 +59,23 @@ export default function Portfolio() {
           {projects.map((project, i) => (
             <div 
               key={i} 
-              className="group py-10 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500 last:border-0"
+              className="group py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 last:border-0"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">{project.year}</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:opacity-75 transition-opacity duration-300">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] transition-colors duration-300">
                     {project.link ? (
                       <a 
                         href={project.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="hover-line"
+                        className="hover-line-accent"
                       >
                         {project.title}
-                        <span className="text-[--muted] ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">↗</span>
+                        <span className="text-[--accent] ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">↗</span>
                       </a>
                     ) : (
                       project.title

@@ -18,7 +18,7 @@ export default function About() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover-line font-medium italic"
+              className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 hover-line-accent font-medium italic"
             >
               NativeStack AI
             </a>
@@ -46,7 +46,7 @@ export default function About() {
         
         {/* Experience */}
         <div className="mt-40">
-          <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase mb-16 font-medium">
+          <h2 className="text-xs tracking-[0.15em] text-[--accent] uppercase mb-16 font-medium">
             Experience
           </h2>
           
@@ -62,7 +62,7 @@ export default function About() {
                     href="https://nativestack.ai" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover-line"
+                    className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 hover-line-accent"
                   >
                     NativeStack AI
                   </a>
@@ -84,7 +84,7 @@ export default function About() {
         
         {/* Skills */}
         <div className="mt-40">
-          <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase mb-16 font-medium">
+          <h2 className="text-xs tracking-[0.15em] text-[--secondary] uppercase mb-16 font-medium">
             Skills
           </h2>
           
@@ -100,7 +100,7 @@ export default function About() {
         
         {/* Connect */}
         <div className="mt-40">
-          <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase mb-16 font-medium">
+          <h2 className="text-xs tracking-[0.15em] text-[--accent] uppercase mb-16 font-medium">
             Connect
           </h2>
           
@@ -109,7 +109,7 @@ export default function About() {
               href="https://www.linkedin.com/in/danteocualesjr/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block hover-line text-xl w-fit"
+              className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
             >
               LinkedIn
             </a>
@@ -117,13 +117,13 @@ export default function About() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block hover-line text-xl w-fit"
+              className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
             >
               NativeStack AI
             </a>
             <a 
               href="mailto:your.email@example.com" 
-              className="block hover-line text-xl w-fit"
+              className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-300"
             >
               your.email@example.com
             </a>

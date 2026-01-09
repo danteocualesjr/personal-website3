@@ -30,7 +30,7 @@ export default function Navigation() {
             <Link 
               href="/about" 
               className={`text-sm transition-colors duration-300 hover-line ${
-                isActive('/about') ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+                isActive('/about') ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
               }`}
             >
               About
@@ -38,7 +38,7 @@ export default function Navigation() {
             <Link 
               href="/portfolio" 
               className={`text-sm transition-colors duration-300 hover-line ${
-                isActive('/portfolio') ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+                isActive('/portfolio') ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
               }`}
             >
               Work
@@ -46,7 +46,7 @@ export default function Navigation() {
             <Link 
               href="/blog" 
               className={`text-sm transition-colors duration-300 hover-line ${
-                isActive('/blog') ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+                isActive('/blog') ? 'text-[--secondary]' : 'text-[--muted] hover:text-[--secondary]'
               }`}
             >
               Writing
@@ -54,7 +54,7 @@ export default function Navigation() {
             <Link 
               href="/contact" 
               className={`text-sm transition-colors duration-300 hover-line ${
-                isActive('/contact') ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+                isActive('/contact') ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
               }`}
             >
               Contact

@@ -58,7 +58,7 @@ export default function Bookshelf() {
           <button 
             onClick={() => setFilter('all')}
             className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'all' ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+              filter === 'all' ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
             }`}
           >
             All ({books.length})
@@ -66,7 +66,7 @@ export default function Bookshelf() {
           <button 
             onClick={() => setFilter('read')}
             className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'read' ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+              filter === 'read' ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
             }`}
           >
             Read ({books.filter(b => b.status === 'read').length})
@@ -74,7 +74,7 @@ export default function Bookshelf() {
           <button 
             onClick={() => setFilter('reading')}
             className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'reading' ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+              filter === 'reading' ? 'text-[--secondary]' : 'text-[--muted] hover:text-[--secondary]'
             }`}
           >
             Reading ({books.filter(b => b.status === 'reading').length})
@@ -82,7 +82,7 @@ export default function Bookshelf() {
           <button 
             onClick={() => setFilter('want')}
             className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'want' ? 'text-[--text]' : 'text-[--muted] hover:text-[--text]'
+              filter === 'want' ? 'text-[--muted]' : 'text-[--muted] hover:text-[--text]'
             }`}
           >
             To Read ({books.filter(b => b.status === 'want').length})
@@ -106,7 +106,7 @@ export default function Bookshelf() {
                           key={i}
                           className={`text-lg ${
                             i < book.rating!
-                              ? 'text-[--text]'
+                              ? 'text-[--accent]'
                               : 'text-[--border]'
                           }`}
                         >

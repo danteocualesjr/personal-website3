@@ -29,7 +29,7 @@ export default async function Fiction() {
               <Link 
                 key={story.slug} 
                 href={`/fiction/${story.slug}`}
-                className="group block py-10 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500 last:border-0"
+                className="group block py-10 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500 last:border-0"
               >
                 <div className="grid md:grid-cols-12 gap-8 items-start">
                   <div className="md:col-span-3">
@@ -41,7 +41,7 @@ export default async function Fiction() {
                     </p>
                   </div>
                   <div className="md:col-span-9">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:opacity-75 transition-opacity duration-300 italic">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] transition-colors duration-300 italic">
                       {story.title}
                     </h2>
                     {story.excerpt && (

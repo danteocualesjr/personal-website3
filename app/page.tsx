@@ -6,7 +6,7 @@ export default function Home() {
       {/* Hero */}
       <section className="min-h-[90vh] flex items-center px-6 pt-12">
         <div className="max-w-6xl mx-auto w-full">
-          <p className="text-[--muted] text-xs tracking-[0.15em] uppercase mb-8 animate-in font-medium">
+          <p className="text-[--accent] text-xs tracking-[0.15em] uppercase mb-8 animate-in font-medium">
             Founder · Writer
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.08] mb-16 animate-in delay-1 text-balance">
@@ -15,7 +15,7 @@ export default function Home() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover-line font-medium italic"
+              className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 hover-line-accent font-medium italic"
             >
               NativeStack AI
             </a>
@@ -50,12 +50,12 @@ export default function Home() {
       <section className="py-32 px-6 border-t border-[--border]">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-baseline justify-between mb-20">
-            <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase font-medium">
+            <h2 className="text-xs tracking-[0.15em] text-[--accent] uppercase font-medium">
               Selected Work
             </h2>
             <Link 
               href="/portfolio" 
-              className="text-sm text-[--muted] hover:text-[--text] transition-colors duration-300 hover-line"
+              className="text-sm text-[--muted] hover:text-[--accent] transition-colors duration-300 hover-line"
             >
               View all →
             </Link>
@@ -66,21 +66,21 @@ export default function Home() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group block py-10 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500"
+              className="group block py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">2023 — Present</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:opacity-75 transition-opacity duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] transition-colors duration-300">
                     NativeStack AI
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed mb-6 max-w-2xl">
                     AI startup making artificial intelligence more accessible and practical. 
                     Leading product, engineering, and company strategy.
                   </p>
-                  <span className="inline-flex items-center gap-2 text-sm text-[--muted] group-hover:text-[--text] transition-colors duration-300">
+                  <span className="inline-flex items-center gap-2 text-sm text-[--accent] group-hover:text-[--accent-dark] transition-colors duration-300">
                     Visit website
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-x-1">↗</span>
                   </span>
@@ -90,14 +90,14 @@ export default function Home() {
             
             <Link 
               href="/portfolio" 
-              className="group block py-10 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500"
+              className="group block py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">2023</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:opacity-75 transition-opacity duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] transition-colors duration-300">
                     Task Management App
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -109,14 +109,14 @@ export default function Home() {
             
             <Link 
               href="/portfolio" 
-              className="group block py-10 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500 last:border-0"
+              className="group block py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 last:border-0"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">2022</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:opacity-75 transition-opacity duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] transition-colors duration-300">
                     Weather Dashboard
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -133,12 +133,12 @@ export default function Home() {
       <section className="py-32 px-6 border-t border-[--border]">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-baseline justify-between mb-20">
-            <h2 className="text-xs tracking-[0.15em] text-[--muted] uppercase font-medium">
+            <h2 className="text-xs tracking-[0.15em] text-[--secondary] uppercase font-medium">
               Recent Writing
             </h2>
             <Link 
               href="/blog" 
-              className="text-sm text-[--muted] hover:text-[--text] transition-colors duration-300 hover-line"
+              className="text-sm text-[--muted] hover:text-[--secondary] transition-colors duration-300 hover-line"
             >
               View all →
             </Link>
@@ -147,14 +147,14 @@ export default function Home() {
           <div className="space-y-0">
             <Link 
               href="/blog/getting-started-with-nextjs" 
-              className="group block py-8 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500"
+              className="group block py-8 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">January 2024</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:opacity-75 transition-opacity duration-300">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] transition-colors duration-300">
                     Getting Started with Next.js
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -166,14 +166,14 @@ export default function Home() {
             
             <Link 
               href="/blog/art-of-clean-code" 
-              className="group block py-8 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500"
+              className="group block py-8 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">January 2024</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:opacity-75 transition-opacity duration-300">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] transition-colors duration-300">
                     The Art of Clean Code
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -185,14 +185,14 @@ export default function Home() {
             
             <Link 
               href="/blog/journey-into-web-development" 
-              className="group block py-8 border-b border-[--border] hover:border-[--text]/30 transition-all duration-500 last:border-0"
+              className="group block py-8 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500 last:border-0"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">January 2024</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:opacity-75 transition-opacity duration-300">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] transition-colors duration-300">
                     My Journey into Web Development
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -219,7 +219,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
               <Link 
                 href="/contact" 
-                className="hover-line text-xl"
+                className="hover-line text-xl text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
               >
                 Get in touch →
               </Link>
@@ -228,7 +228,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/danteocualesjr/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover-line text-xl text-[--muted] hover:text-[--text] transition-colors duration-300"
+                className="hover-line text-xl text-[--muted] hover:text-[--accent] transition-colors duration-300"
               >
                 Connect on LinkedIn
               </a>
