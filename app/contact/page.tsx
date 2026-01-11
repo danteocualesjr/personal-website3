@@ -12,6 +12,7 @@ export default function Contact() {
     setTimeout(() => {
       setStatus('sent')
       setForm({ name: '', email: '', message: '' })
+      setTimeout(() => setStatus('idle'), 5000)
     }, 1000)
   }
 
@@ -28,57 +29,70 @@ export default function Contact() {
         </div>
         
         <div className="grid md:grid-cols-5 gap-20">
-          <form onSubmit={handleSubmit} className="md:col-span-3 space-y-10">
+          <form onSubmit={handleSubmit} className="md:col-span-3 space-y-10" noValidate>
             <div>
-              <label className="block text-sm text-[--muted] mb-3 uppercase tracking-wider">
+              <label htmlFor="name" className="block text-sm text-[--muted] mb-3 uppercase tracking-wider font-medium">
                 Name
               </label>
               <input
+                id="name"
                 type="text"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg"
+                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 placeholder="Your name"
+                aria-required="true"
               />
             </div>
             
             <div>
-              <label className="block text-sm text-[--muted] mb-3 uppercase tracking-wider">
+              <label htmlFor="email" className="block text-sm text-[--muted] mb-3 uppercase tracking-wider font-medium">
                 Email
               </label>
               <input
+                id="email"
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg"
+                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 placeholder="your@email.com"
+                aria-required="true"
               />
             </div>
             
             <div>
-              <label className="block text-sm text-[--muted] mb-3 uppercase tracking-wider">
+              <label htmlFor="message" className="block text-sm text-[--muted] mb-3 uppercase tracking-wider font-medium">
                 Message
               </label>
               <textarea
+                id="message"
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
                 rows={6}
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 resize-none text-lg"
+                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 resize-none text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 placeholder="Tell me about your project..."
+                aria-required="true"
               />
             </div>
             
             {status === 'sent' && (
-              <p className="text-lg text-[--accent]">Message sent. I'll be in touch.</p>
+              <div 
+                role="status" 
+                aria-live="polite"
+                className="text-lg text-[--accent] animate-in"
+              >
+                Message sent. I'll be in touch.
+              </div>
             )}
             
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="hover-line text-lg text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="hover-line text-lg text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+              aria-busy={status === 'sending'}
             >
               {status === 'sending' ? 'Sending...' : 'Send message'}
             </button>
@@ -86,19 +100,19 @@ export default function Contact() {
           
           <div className="md:col-span-2 space-y-12">
             <div>
-              <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider">
+              <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
                 Email
               </p>
               <a 
                 href="mailto:your.email@example.com" 
-                className="hover-line text-xl text-[--muted] hover:text-[--accent] transition-colors duration-300"
+                className="hover-line text-xl text-[--muted] hover:text-[--accent] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
               >
                 your.email@example.com
               </a>
             </div>
             
             <div>
-              <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider">
+              <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
                 Social
               </p>
               <div className="space-y-4">
@@ -106,7 +120,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/danteocualesjr/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
+                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 >
                   LinkedIn
                 </a>
@@ -114,7 +128,7 @@ export default function Contact() {
                   href="https://nativestack.ai" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
+                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 >
                   NativeStack AI
                 </a>
@@ -122,7 +136,7 @@ export default function Contact() {
                   href="https://github.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-300"
+                  className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 >
                   GitHub
                 </a>
