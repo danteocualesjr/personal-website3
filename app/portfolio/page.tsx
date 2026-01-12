@@ -59,32 +59,32 @@ export default function Portfolio() {
           {projects.map((project, i) => (
             <div 
               key={i} 
-              className="group py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 last:border-0"
+              className="group py-12 border-b border-[--border] hover:border-[--accent]/40 transition-all duration-500 last:border-0 focus-within:border-[--accent]/50"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">{project.year}</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] transition-colors duration-300">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5 group-hover:text-[--accent] transition-colors duration-500">
                     {project.link ? (
                       <a 
                         href={project.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="hover-line-accent"
+                        className="hover-line-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded inline-flex items-center gap-2"
                       >
                         {project.title}
-                        <span className="text-[--accent] ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">↗</span>
+                        <span className="text-[--accent] opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
                       </a>
                     ) : (
                       project.title
                     )}
                   </h2>
-                  <p className="text-[--muted] text-lg leading-relaxed mb-4 max-w-2xl">
+                  <p className="text-[--muted] text-lg leading-relaxed mb-5 max-w-2xl">
                     {project.description}
                   </p>
-                  <p className="text-sm text-[--muted]">
+                  <p className="text-sm text-[--muted] font-medium">
                     {project.tech}
                   </p>
                 </div>

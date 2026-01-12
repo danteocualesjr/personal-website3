@@ -34,55 +34,55 @@ export default function Bookshelf() {
         </div>
         
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 pb-16 border-b border-[--border]">
-          <div>
-            <p className="text-4xl md:text-5xl mb-2">{books.filter(b => b.status === 'read').length}</p>
-            <p className="text-sm text-[--muted] uppercase tracking-wider">Read</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 pb-20 border-b border-[--border]">
+          <div className="animate-in delay-1">
+            <p className="text-4xl md:text-5xl lg:text-6xl mb-3 font-medium">{books.filter(b => b.status === 'read').length}</p>
+            <p className="text-sm text-[--muted] uppercase tracking-wider font-medium">Read</p>
           </div>
-          <div>
-            <p className="text-4xl md:text-5xl mb-2">{books.filter(b => b.status === 'reading').length}</p>
-            <p className="text-sm text-[--muted] uppercase tracking-wider">Reading</p>
+          <div className="animate-in delay-2">
+            <p className="text-4xl md:text-5xl lg:text-6xl mb-3 font-medium">{books.filter(b => b.status === 'reading').length}</p>
+            <p className="text-sm text-[--muted] uppercase tracking-wider font-medium">Reading</p>
           </div>
-          <div>
-            <p className="text-4xl md:text-5xl mb-2">{books.filter(b => b.status === 'want').length}</p>
-            <p className="text-sm text-[--muted] uppercase tracking-wider">To Read</p>
+          <div className="animate-in delay-3">
+            <p className="text-4xl md:text-5xl lg:text-6xl mb-3 font-medium">{books.filter(b => b.status === 'want').length}</p>
+            <p className="text-sm text-[--muted] uppercase tracking-wider font-medium">To Read</p>
           </div>
-          <div>
-            <p className="text-4xl md:text-5xl mb-2">{books.length}</p>
-            <p className="text-sm text-[--muted] uppercase tracking-wider">Total</p>
+          <div className="animate-in delay-4">
+            <p className="text-4xl md:text-5xl lg:text-6xl mb-3 font-medium">{books.length}</p>
+            <p className="text-sm text-[--muted] uppercase tracking-wider font-medium">Total</p>
           </div>
         </div>
         
         {/* Filter */}
-        <div className="flex flex-wrap gap-4 mb-16 text-sm">
+        <div className="flex flex-wrap gap-4 mb-20 text-sm">
           <button 
             onClick={() => setFilter('all')}
-            className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'all' ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
+            className={`px-5 py-2.5 transition-all duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              filter === 'all' ? 'text-[--accent] font-medium' : 'text-[--muted] hover:text-[--accent]'
             }`}
           >
             All ({books.length})
           </button>
           <button 
             onClick={() => setFilter('read')}
-            className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'read' ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
+            className={`px-5 py-2.5 transition-all duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              filter === 'read' ? 'text-[--accent] font-medium' : 'text-[--muted] hover:text-[--accent]'
             }`}
           >
             Read ({books.filter(b => b.status === 'read').length})
           </button>
           <button 
             onClick={() => setFilter('reading')}
-            className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'reading' ? 'text-[--secondary]' : 'text-[--muted] hover:text-[--secondary]'
+            className={`px-5 py-2.5 transition-all duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
+              filter === 'reading' ? 'text-[--secondary] font-medium' : 'text-[--muted] hover:text-[--secondary]'
             }`}
           >
             Reading ({books.filter(b => b.status === 'reading').length})
           </button>
           <button 
             onClick={() => setFilter('want')}
-            className={`px-4 py-2 transition-colors duration-300 hover-line ${
-              filter === 'want' ? 'text-[--muted]' : 'text-[--muted] hover:text-[--text]'
+            className={`px-5 py-2.5 transition-all duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--muted] focus-visible:rounded ${
+              filter === 'want' ? 'text-[--text] font-medium' : 'text-[--muted] hover:text-[--text]'
             }`}
           >
             To Read ({books.filter(b => b.status === 'want').length})
@@ -92,19 +92,22 @@ export default function Bookshelf() {
         {/* Books */}
         <div className="space-y-0">
           {filtered.map((book, i) => (
-            <div key={i} className="py-8 border-b border-[--border] last:border-0">
+            <div 
+              key={i} 
+              className="group py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 last:border-0"
+            >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-9">
-                  <h3 className="text-xl md:text-2xl mb-2">{book.title}</h3>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl mb-3 group-hover:text-[--accent] transition-colors duration-500">{book.title}</h3>
                   <p className="text-[--muted] text-lg">{book.author}</p>
                 </div>
-                <div className="md:col-span-3 flex md:justify-end">
+                <div className="md:col-span-3 flex md:justify-end items-start">
                   {book.rating && (
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
                         <span
                           key={i}
-                          className={`text-lg ${
+                          className={`text-xl transition-all duration-500 ${
                             i < book.rating!
                               ? 'text-[--accent]'
                               : 'text-[--border]'

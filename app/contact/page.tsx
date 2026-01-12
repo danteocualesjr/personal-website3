@@ -29,9 +29,9 @@ export default function Contact() {
         </div>
         
         <div className="grid md:grid-cols-5 gap-20">
-          <form onSubmit={handleSubmit} className="md:col-span-3 space-y-10" noValidate>
+          <form onSubmit={handleSubmit} className="md:col-span-3 space-y-12" noValidate>
             <div>
-              <label htmlFor="name" className="block text-sm text-[--muted] mb-3 uppercase tracking-wider font-medium">
+              <label htmlFor="name" className="block text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
                 Name
               </label>
               <input
@@ -40,14 +40,14 @@ export default function Contact() {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                className="w-full bg-transparent border-b-2 border-[--border] py-5 focus:border-[--accent] focus:outline-none transition-colors duration-500 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded placeholder:text-[--muted]/50"
                 placeholder="Your name"
                 aria-required="true"
               />
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm text-[--muted] mb-3 uppercase tracking-wider font-medium">
+              <label htmlFor="email" className="block text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
                 Email
               </label>
               <input
@@ -56,14 +56,14 @@ export default function Contact() {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                className="w-full bg-transparent border-b-2 border-[--border] py-5 focus:border-[--accent] focus:outline-none transition-colors duration-500 text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded placeholder:text-[--muted]/50"
                 placeholder="your@email.com"
                 aria-required="true"
               />
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm text-[--muted] mb-3 uppercase tracking-wider font-medium">
+              <label htmlFor="message" className="block text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
                 Message
               </label>
               <textarea
@@ -71,8 +71,8 @@ export default function Contact() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
-                rows={6}
-                className="w-full bg-transparent border-b-2 border-[--border] py-4 focus:border-[--accent] focus:outline-none transition-colors duration-300 resize-none text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                rows={7}
+                className="w-full bg-transparent border-b-2 border-[--border] py-5 focus:border-[--accent] focus:outline-none transition-colors duration-500 resize-none text-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded placeholder:text-[--muted]/50"
                 placeholder="Tell me about your project..."
                 aria-required="true"
               />
@@ -82,7 +82,7 @@ export default function Contact() {
               <div 
                 role="status" 
                 aria-live="polite"
-                className="text-lg text-[--accent] animate-in"
+                className="text-lg text-[--accent] animate-in font-medium"
               >
                 Message sent. I'll be in touch.
               </div>
@@ -91,36 +91,36 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="hover-line text-lg text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="hover-line text-lg md:text-xl text-[--accent] hover:text-[--accent-dark] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded font-medium"
               aria-busy={status === 'sending'}
             >
               {status === 'sending' ? 'Sending...' : 'Send message'}
             </button>
           </form>
           
-          <div className="md:col-span-2 space-y-12">
+          <div className="md:col-span-2 space-y-16">
             <div>
-              <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
+              <p className="text-sm text-[--muted] mb-6 uppercase tracking-wider font-medium">
                 Email
               </p>
               <a 
                 href="mailto:your.email@example.com" 
-                className="hover-line text-xl text-[--muted] hover:text-[--accent] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                className="hover-line text-xl md:text-2xl text-[--muted] hover:text-[--accent] transition-colors duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
               >
                 your.email@example.com
               </a>
             </div>
             
             <div>
-              <p className="text-sm text-[--muted] mb-4 uppercase tracking-wider font-medium">
+              <p className="text-sm text-[--muted] mb-6 uppercase tracking-wider font-medium">
                 Social
               </p>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <a 
                   href="https://www.linkedin.com/in/danteocualesjr/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                  className="block hover-line text-xl md:text-2xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 >
                   LinkedIn
                 </a>
@@ -128,7 +128,7 @@ export default function Contact() {
                   href="https://nativestack.ai" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                  className="block hover-line text-xl md:text-2xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 >
                   NativeStack AI
                 </a>
@@ -136,7 +136,7 @@ export default function Contact() {
                   href="https://github.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+                  className="block hover-line text-xl md:text-2xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                 >
                   GitHub
                 </a>

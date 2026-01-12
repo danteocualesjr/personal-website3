@@ -105,11 +105,11 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-6 py-8 space-y-6 border-t border-[--border] bg-[--bg]">
+        <div className="px-6 py-10 space-y-8 border-t border-[--border] bg-[--bg]/95 backdrop-blur-md">
           <Link 
             href="/about" 
-            className={`block text-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
-              isActive('/about') ? 'opacity-100 text-[--accent]' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
+            className={`block text-2xl transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              isActive('/about') ? 'opacity-100 text-[--accent] font-medium' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -117,8 +117,8 @@ export default function Navigation() {
           </Link>
           <Link 
             href="/portfolio" 
-            className={`block text-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
-              isActive('/portfolio') ? 'opacity-100 text-[--accent]' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
+            className={`block text-2xl transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              isActive('/portfolio') ? 'opacity-100 text-[--accent] font-medium' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -126,8 +126,8 @@ export default function Navigation() {
           </Link>
           <Link 
             href="/blog" 
-            className={`block text-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
-              isActive('/blog') ? 'opacity-100 text-[--secondary]' : 'opacity-70 hover:opacity-100 hover:text-[--secondary]'
+            className={`block text-2xl transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
+              isActive('/blog') ? 'opacity-100 text-[--secondary] font-medium' : 'opacity-70 hover:opacity-100 hover:text-[--secondary]'
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -135,8 +135,8 @@ export default function Navigation() {
           </Link>
           <Link 
             href="/fiction" 
-            className={`block text-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
-              isActive('/fiction') ? 'opacity-100 text-[--secondary]' : 'opacity-70 hover:opacity-100 hover:text-[--secondary]'
+            className={`block text-2xl transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
+              isActive('/fiction') ? 'opacity-100 text-[--secondary] font-medium' : 'opacity-70 hover:opacity-100 hover:text-[--secondary]'
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -144,8 +144,8 @@ export default function Navigation() {
           </Link>
           <Link 
             href="/bookshelf" 
-            className={`block text-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
-              isActive('/bookshelf') ? 'opacity-100 text-[--accent]' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
+            className={`block text-2xl transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              isActive('/bookshelf') ? 'opacity-100 text-[--accent] font-medium' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -153,8 +153,8 @@ export default function Navigation() {
           </Link>
           <Link 
             href="/contact" 
-            className={`block text-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
-              isActive('/contact') ? 'opacity-100 text-[--accent]' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
+            className={`block text-2xl transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              isActive('/contact') ? 'opacity-100 text-[--accent] font-medium' : 'opacity-70 hover:opacity-100 hover:text-[--accent]'
             }`}
             onClick={() => setIsOpen(false)}
           >
