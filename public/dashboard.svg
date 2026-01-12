@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="300" fill="#1a1a1a" rx="8"/>
+  
+  <!-- Header bar -->
+  <rect x="0" y="0" width="400" height="40" fill="#252525" rx="8"/>
+  <rect x="0" y="32" width="400" height="8" fill="#252525"/>
+  <circle cx="24" cy="20" r="6" fill="#c9a227"/>
+  <rect x="40" y="16" width="80" height="8" fill="#444" rx="2"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="60" height="260" fill="#202020"/>
+  <rect x="12" y="60" width="36" height="6" fill="#444" rx="2"/>
+  <rect x="12" y="80" width="36" height="6" fill="#c9a227" rx="2"/>
+  <rect x="12" y="100" width="36" height="6" fill="#444" rx="2"/>
+  <rect x="12" y="120" width="36" height="6" fill="#444" rx="2"/>
+  <rect x="12" y="140" width="36" height="6" fill="#444" rx="2"/>
+  
+  <!-- Main content area -->
+  <!-- Stats cards row -->
+  <rect x="75" y="55" width="70" height="50" fill="#252525" rx="4"/>
+  <rect x="85" y="65" width="30" height="6" fill="#555" rx="2"/>
+  <text x="85" y="92" font-family="system-ui" font-size="16" font-weight="bold" fill="#c9a227">247</text>
+  
+  <rect x="155" y="55" width="70" height="50" fill="#252525" rx="4"/>
+  <rect x="165" y="65" width="30" height="6" fill="#555" rx="2"/>
+  <text x="165" y="92" font-family="system-ui" font-size="16" font-weight="bold" fill="#6b8e5a">89%</text>
+  
+  <rect x="235" y="55" width="70" height="50" fill="#252525" rx="4"/>
+  <rect x="245" y="65" width="30" height="6" fill="#555" rx="2"/>
+  <text x="245" y="92" font-family="system-ui" font-size="16" font-weight="bold" fill="#fff">1.2k</text>
+  
+  <rect x="315" y="55" width="70" height="50" fill="#252525" rx="4"/>
+  <rect x="325" y="65" width="30" height="6" fill="#555" rx="2"/>
+  <text x="325" y="92" font-family="system-ui" font-size="16" font-weight="bold" fill="#6b8e5a">+12</text>
+  
+  <!-- Chart area -->
+  <rect x="75" y="115" width="230" height="120" fill="#252525" rx="4"/>
+  <rect x="85" y="125" width="60" height="6" fill="#555" rx="2"/>
+  
+  <!-- Line chart -->
+  <polyline 
+    points="95,200 120,185 145,190 170,170 195,165 220,150 245,155 270,140" 
+    fill="none" 
+    stroke="#c9a227" 
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <polyline 
+    points="95,210 120,205 145,195 170,200 195,190 220,185 245,180 270,175" 
+    fill="none" 
+    stroke="#6b8e5a" 
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.7"
+  />
+  
+  <!-- Grid lines -->
+  <line x1="95" y1="220" x2="280" y2="220" stroke="#333" stroke-width="1"/>
+  <line x1="95" y1="195" x2="280" y2="195" stroke="#333" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="95" y1="170" x2="280" y2="170" stroke="#333" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="95" y1="145" x2="280" y2="145" stroke="#333" stroke-width="1" stroke-dasharray="4"/>
+  
+  <!-- Right sidebar panel -->
+  <rect x="315" y="115" width="70" height="120" fill="#252525" rx="4"/>
+  <rect x="325" y="125" width="40" height="6" fill="#555" rx="2"/>
+  
+  <!-- Mini bar chart -->
+  <rect x="325" y="200" width="10" height="25" fill="#c9a227" rx="1"/>
+  <rect x="340" y="185" width="10" height="40" fill="#c9a227" rx="1"/>
+  <rect x="355" y="195" width="10" height="30" fill="#6b8e5a" rx="1"/>
+  
+  <!-- Bottom section -->
+  <rect x="75" y="245" width="150" height="45" fill="#252525" rx="4"/>
+  <rect x="85" y="255" width="50" height="6" fill="#555" rx="2"/>
+  <rect x="85" y="270" width="130" height="8" fill="#333" rx="2"/>
+  <rect x="85" y="270" width="85" height="8" fill="#c9a227" rx="2"/>
+  
+  <rect x="235" y="245" width="150" height="45" fill="#252525" rx="4"/>
+  <rect x="245" y="255" width="50" height="6" fill="#555" rx="2"/>
+  <rect x="245" y="270" width="130" height="8" fill="#333" rx="2"/>
+  <rect x="245" y="270" width="100" height="8" fill="#6b8e5a" rx="2"/>
+</svg>

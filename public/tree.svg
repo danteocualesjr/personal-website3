@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300">
+  <!-- Tree trunk -->
+  <rect x="85" y="200" width="30" height="100" fill="#8B7355" rx="2"/>
+  
+  <!-- Tree branches/foliage -->
+  <circle cx="100" cy="120" r="50" fill="#2D5016" opacity="0.9"/>
+  <circle cx="80" cy="100" r="40" fill="#3A6B1F" opacity="0.85"/>
+  <circle cx="120" cy="100" r="40" fill="#3A6B1F" opacity="0.85"/>
+  <circle cx="100" cy="80" r="35" fill="#4A7C2F" opacity="0.8"/>
+  <circle cx="70" cy="110" r="30" fill="#2D5016" opacity="0.9"/>
+  <circle cx="130" cy="110" r="30" fill="#2D5016" opacity="0.9"/>
+  
+  <!-- Highlights -->
+  <circle cx="90" cy="90" r="15" fill="#5A8C3F" opacity="0.6"/>
+  <circle cx="110" cy="85" r="12" fill="#6A9C4F" opacity="0.5"/>
+</svg>
