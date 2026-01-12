@@ -6,39 +6,39 @@ export default function Home() {
       {/* Hero */}
       <section className="min-h-[90vh] flex items-center px-6 pt-12">
         <div className="max-w-6xl mx-auto w-full">
-          <p className="text-[--accent] text-xs tracking-[0.15em] uppercase mb-8 animate-in font-medium">
+          <p className="text-[--accent] text-xs tracking-[0.15em] uppercase mb-10 animate-in font-medium">
             Founder · Writer
           </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.08] mb-16 animate-in delay-1 text-balance">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.08] mb-20 animate-in delay-1 text-balance">
             Building{' '}
             <a 
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 hover-line-accent font-medium italic focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 hover-line-accent font-medium italic focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               NativeStack AI
             </a>
             {' '}and exploring ideas through technology and words.
           </h1>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-lg animate-in delay-2">
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-5 text-lg md:text-xl animate-in delay-2">
             <Link 
               href="/about" 
-              className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded transition-opacity duration-300 hover:opacity-80"
             >
               About me
             </Link>
             <span className="text-[--muted] text-sm" aria-hidden="true">·</span>
             <Link 
               href="/portfolio" 
-              className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded transition-opacity duration-300 hover:opacity-80"
             >
               View work
             </Link>
             <span className="text-[--muted] text-sm" aria-hidden="true">·</span>
             <Link 
               href="/blog" 
-              className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded"
+              className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded transition-opacity duration-300 hover:opacity-80"
             >
               Read writing
             </Link>
@@ -66,23 +66,23 @@ export default function Home() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group block py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 focus-visible:border-[--accent]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="group block py-12 border-b border-[--border] hover:border-[--accent]/40 transition-all duration-500 focus-visible:border-[--accent]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">2023 — Present</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] group-focus-visible:text-[--accent] transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-5 group-hover:text-[--accent] group-focus-visible:text-[--accent] transition-colors duration-500">
                     NativeStack AI
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed mb-6 max-w-2xl">
                     AI startup making artificial intelligence more accessible and practical. 
                     Leading product, engineering, and company strategy.
                   </p>
-                  <span className="inline-flex items-center gap-2 text-sm text-[--accent] group-hover:text-[--accent-dark] transition-colors duration-300">
+                  <span className="inline-flex items-center gap-2 text-sm text-[--accent] group-hover:text-[--accent-dark] transition-all duration-500 font-medium">
                     Visit website
-                    <span className="opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">↗</span>
+                    <span className="opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-all duration-500 transform group-hover:translate-x-1.5">↗</span>
                   </span>
                 </div>
               </div>
@@ -90,14 +90,14 @@ export default function Home() {
             
             <Link 
               href="/portfolio" 
-              className="group block py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 focus-visible:border-[--accent]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="group block py-12 border-b border-[--border] hover:border-[--accent]/40 transition-all duration-500 focus-visible:border-[--accent]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">2023</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] group-focus-visible:text-[--accent] transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-5 group-hover:text-[--accent] group-focus-visible:text-[--accent] transition-colors duration-500">
                     Task Management App
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -109,14 +109,14 @@ export default function Home() {
             
             <Link 
               href="/portfolio" 
-              className="group block py-10 border-b border-[--border] hover:border-[--accent]/30 transition-all duration-500 last:border-0 focus-visible:border-[--accent]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="group block py-12 border-b border-[--border] hover:border-[--accent]/40 transition-all duration-500 last:border-0 focus-visible:border-[--accent]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">2022</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:text-[--accent] group-focus-visible:text-[--accent] transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl mb-5 group-hover:text-[--accent] group-focus-visible:text-[--accent] transition-colors duration-500">
                     Weather Dashboard
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -147,14 +147,14 @@ export default function Home() {
           <div className="space-y-0">
             <Link 
               href="/blog/getting-started-with-nextjs" 
-              className="group block py-8 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
+              className="group block py-10 border-b border-[--border] hover:border-[--secondary]/40 transition-all duration-500 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">January 2024</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] group-focus-visible:text-[--secondary] transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-4 group-hover:text-[--secondary] group-focus-visible:text-[--secondary] transition-colors duration-500">
                     Getting Started with Next.js
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -166,14 +166,14 @@ export default function Home() {
             
             <Link 
               href="/blog/art-of-clean-code" 
-              className="group block py-8 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
+              className="group block py-10 border-b border-[--border] hover:border-[--secondary]/40 transition-all duration-500 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">January 2024</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] group-focus-visible:text-[--secondary] transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-4 group-hover:text-[--secondary] group-focus-visible:text-[--secondary] transition-colors duration-500">
                     The Art of Clean Code
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
@@ -185,14 +185,14 @@ export default function Home() {
             
             <Link 
               href="/blog/journey-into-web-development" 
-              className="group block py-8 border-b border-[--border] hover:border-[--secondary]/30 transition-all duration-500 last:border-0 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
+              className="group block py-10 border-b border-[--border] hover:border-[--secondary]/40 transition-all duration-500 last:border-0 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
             >
               <div className="grid md:grid-cols-12 gap-8 items-start">
                 <div className="md:col-span-3">
                   <p className="text-[--muted] text-sm font-medium">January 2024</p>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-3 group-hover:text-[--secondary] group-focus-visible:text-[--secondary] transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl mb-4 group-hover:text-[--secondary] group-focus-visible:text-[--secondary] transition-colors duration-500">
                     My Journey into Web Development
                   </h3>
                   <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">

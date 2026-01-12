@@ -44,10 +44,10 @@ export default function Navigation() {
           </Link>
           
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-8">
             <Link 
               href="/about" 
-              className={`text-sm transition-colors duration-300 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              className={`text-sm transition-colors duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
                 isActive('/about') ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
               }`}
             >
@@ -55,7 +55,7 @@ export default function Navigation() {
             </Link>
             <Link 
               href="/portfolio" 
-              className={`text-sm transition-colors duration-300 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              className={`text-sm transition-colors duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
                 isActive('/portfolio') ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
               }`}
             >
@@ -63,15 +63,23 @@ export default function Navigation() {
             </Link>
             <Link 
               href="/blog" 
-              className={`text-sm transition-colors duration-300 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
+              className={`text-sm transition-colors duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
                 isActive('/blog') ? 'text-[--secondary]' : 'text-[--muted] hover:text-[--secondary]'
               }`}
             >
               Writing
             </Link>
             <Link 
+              href="/fiction" 
+              className={`text-sm transition-colors duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--secondary] focus-visible:rounded ${
+                isActive('/fiction') ? 'text-[--secondary]' : 'text-[--muted] hover:text-[--secondary]'
+              }`}
+            >
+              Fiction
+            </Link>
+            <Link 
               href="/contact" 
-              className={`text-sm transition-colors duration-300 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
+              className={`text-sm transition-colors duration-500 hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded ${
                 isActive('/contact') ? 'text-[--accent]' : 'text-[--muted] hover:text-[--accent]'
               }`}
             >

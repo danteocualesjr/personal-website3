@@ -7,18 +7,18 @@ export default function About() {
   return (
     <div className="px-6 py-24 pt-32">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-20 animate-in">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-24 animate-in">
           About
         </h1>
         
-        <div className="space-y-10 text-xl md:text-2xl leading-relaxed animate-in delay-1">
+        <div className="space-y-12 text-xl md:text-2xl leading-relaxed animate-in delay-1">
           <p>
             I'm the founder of{' '}
             <a 
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 hover-line-accent font-medium italic"
+              className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 hover-line-accent font-medium italic focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               NativeStack AI
             </a>
@@ -51,18 +51,18 @@ export default function About() {
           </h2>
           
           <div className="space-y-0">
-            <div className="grid md:grid-cols-12 gap-8 py-8 border-b border-[--border]">
+            <div className="grid md:grid-cols-12 gap-8 py-10 border-b border-[--border] hover:border-[--accent]/30 transition-colors duration-500">
               <div className="md:col-span-3">
                 <p className="text-[--muted] text-sm font-medium">2023 — Present</p>
               </div>
               <div className="md:col-span-9">
-                <p className="text-xl md:text-2xl mb-2">Founder & CEO</p>
+                <p className="text-xl md:text-2xl mb-3">Founder & CEO</p>
                 <p className="text-[--muted] text-lg">
                   <a 
                     href="https://nativestack.ai" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-300 hover-line-accent"
+                    className="text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 hover-line-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
                   >
                     NativeStack AI
                   </a>
@@ -70,12 +70,12 @@ export default function About() {
               </div>
             </div>
             
-            <div className="grid md:grid-cols-12 gap-8 py-8 border-b border-[--border] last:border-0">
+            <div className="grid md:grid-cols-12 gap-8 py-10 border-b border-[--border] last:border-0 hover:border-[--accent]/30 transition-colors duration-500">
               <div className="md:col-span-3">
                 <p className="text-[--muted] text-sm font-medium">2020 — 2023</p>
               </div>
               <div className="md:col-span-9">
-                <p className="text-xl md:text-2xl mb-2">Software Developer</p>
+                <p className="text-xl md:text-2xl mb-3">Software Developer</p>
                 <p className="text-[--muted] text-lg">Various companies</p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function About() {
               href="https://www.linkedin.com/in/danteocualesjr/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
+              className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 focus-visible:text-[--accent-dark] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               LinkedIn
             </a>
@@ -117,13 +117,13 @@ export default function About() {
               href="https://nativestack.ai" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-300"
+              className="block hover-line text-xl w-fit text-[--accent] hover:text-[--accent-dark] transition-colors duration-500 focus-visible:text-[--accent-dark] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               NativeStack AI
             </a>
             <a 
               href="mailto:your.email@example.com" 
-              className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-300"
+              className="block hover-line text-xl w-fit text-[--muted] hover:text-[--accent] transition-colors duration-500 focus-visible:text-[--accent] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
             >
               your.email@example.com
             </a>
