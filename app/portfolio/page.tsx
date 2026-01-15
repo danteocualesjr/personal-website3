@@ -59,11 +59,12 @@ export default function Portfolio() {
           {projects.map((project, i) => (
             <div 
               key={i} 
-              className="group py-12 border-b border-[--border] hover:border-[--accent]/40 transition-all duration-500 last:border-0 focus-within:border-[--accent]/50"
+              className="group py-12 border-b border-[--border] hover:border-[--accent]/40 transition-all duration-500 last:border-0 focus-within:border-[--accent]/50 relative overflow-hidden"
             >
-              <div className="grid md:grid-cols-12 gap-8 items-start">
+              <div className="absolute inset-0 bg-gradient-to-r from-[--accent-bg] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div className="grid md:grid-cols-12 gap-8 items-start relative z-10">
                 <div className="md:col-span-3">
-                  <p className="text-[--muted] text-sm font-medium">{project.year}</p>
+                  <p className="text-[--muted] text-sm font-medium group-hover:text-[--accent] transition-colors duration-500">{project.year}</p>
                 </div>
                 <div className="md:col-span-9">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl mb-5 group-hover:text-[--accent] transition-colors duration-500">
@@ -81,10 +82,10 @@ export default function Portfolio() {
                       project.title
                     )}
                   </h2>
-                  <p className="text-[--muted] text-lg leading-relaxed mb-5 max-w-2xl">
+                  <p className="text-[--muted] text-lg leading-relaxed mb-5 max-w-2xl group-hover:text-[--text] transition-colors duration-500">
                     {project.description}
                   </p>
-                  <p className="text-sm text-[--muted] font-medium">
+                  <p className="text-sm text-[--muted] font-medium group-hover:text-[--accent] transition-colors duration-500">
                     {project.tech}
                   </p>
                 </div>

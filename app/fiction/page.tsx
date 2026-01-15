@@ -29,11 +29,12 @@ export default async function Fiction() {
               <Link 
                 key={story.slug} 
                 href={`/fiction/${story.slug}`}
-                className="group block py-12 border-b border-[--border] hover:border-[--secondary]/40 transition-all duration-500 last:border-0 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded"
+                className="group block py-12 border-b border-[--border] hover:border-[--secondary]/40 transition-all duration-500 last:border-0 focus-visible:border-[--secondary]/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[--secondary] focus-visible:rounded relative overflow-hidden"
               >
-                <div className="grid md:grid-cols-12 gap-8 items-start">
+                <div className="absolute inset-0 bg-gradient-to-r from-[--secondary-bg] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="grid md:grid-cols-12 gap-8 items-start relative z-10">
                   <div className="md:col-span-3">
-                    <p className="text-[--muted] text-sm font-medium">
+                    <p className="text-[--muted] text-sm font-medium group-hover:text-[--secondary] transition-colors duration-500">
                       {new Date(story.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
@@ -45,7 +46,7 @@ export default async function Fiction() {
                       {story.title}
                     </h2>
                     {story.excerpt && (
-                      <p className="text-[--muted] text-lg leading-relaxed max-w-2xl">
+                      <p className="text-[--muted] text-lg leading-relaxed max-w-2xl group-hover:text-[--text] transition-colors duration-500">
                         {story.excerpt}
                       </p>
                     )}

@@ -32,12 +32,12 @@ export default function Navigation() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[--bg]/80 backdrop-blur-md border-b border-[--border] transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[--bg]/85 backdrop-blur-lg border-b border-[--border] transition-all duration-300 shadow-sm">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           <Link 
             href="/" 
-            className="text-xl tracking-tight hover:opacity-70 transition-opacity duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+            className="text-xl tracking-tight hover:opacity-70 transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded hover:translate-x-0.5"
             aria-label="Home"
           >
             Dante Cuales

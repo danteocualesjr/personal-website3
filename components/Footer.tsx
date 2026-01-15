@@ -2,13 +2,17 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[--border] mt-40">
-      <div className="max-w-6xl mx-auto px-6 py-24">
+    <footer className="border-t border-[--border] mt-40 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.01] pointer-events-none">
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-[--accent] blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-[--secondary] blur-3xl"></div>
+      </div>
+      <div className="max-w-6xl mx-auto px-6 py-24 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
           <div className="col-span-2 md:col-span-1">
             <Link 
               href="/" 
-              className="text-xl tracking-tight hover:opacity-70 transition-opacity duration-500 block mb-5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded"
+              className="text-xl tracking-tight hover:opacity-70 transition-all duration-500 block mb-5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded hover:translate-x-0.5"
             >
               Dante Cuales
             </Link>
@@ -104,8 +108,9 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-24 pt-12 border-t border-[--border] text-sm text-[--muted]">
-          © {new Date().getFullYear()} Dante Cuales. All rights reserved.
+        <div className="mt-24 pt-12 border-t border-[--border] text-sm text-[--muted] relative">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[--border] to-transparent"></div>
+          <p className="relative z-10">© {new Date().getFullYear()} Dante Cuales. All rights reserved.</p>
         </div>
       </div>
     </footer>
