@@ -11,10 +11,7 @@ export default function Home() {
           <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-[--secondary] blur-3xl"></div>
         </div>
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          <p className="text-[--accent] text-xs tracking-[0.15em] uppercase mb-10 animate-in font-medium">
-            Founder · Writer
-          </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.08] mb-20 animate-in delay-1 text-balance">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.08] mb-20 animate-in text-balance">
             Building{' '}
             <a 
               href="https://nativestack.ai" 
@@ -26,7 +23,7 @@ export default function Home() {
             </a>
             {' '}and exploring ideas through technology and words.
           </h1>
-          <div className="flex flex-wrap items-center gap-x-10 gap-y-5 text-lg md:text-xl animate-in delay-2">
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-5 text-lg md:text-xl animate-in delay-1">
             <Link 
               href="/about" 
               className="hover-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[--accent] focus-visible:rounded transition-all duration-300 hover:opacity-80 hover:translate-x-1"
