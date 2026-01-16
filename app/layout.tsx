@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import StructuredData from '@/components/StructuredData'
 import { siteConfig } from '@/lib/site'
+import { getWebSiteSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: {
@@ -46,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
+        <StructuredData data={getWebSiteSchema()} />
         <Navigation />
         <main className="flex-grow pt-20">
           {children}

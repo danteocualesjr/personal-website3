@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import StructuredData from '@/components/StructuredData'
 import { getPostBySlug, getAllPosts } from '@/lib/markdown'
 import { siteConfig } from '@/lib/site'
+import { getArticleSchema } from '@/lib/structured-data'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts('blog')
@@ -46,8 +48,19 @@ export default async function BlogPost({ params }: { params: { slug: string } })
   const post = await getPostBySlug('blog', params.slug)
   if (!post) notFound()
 
+  const postUrl = `${siteConfig.url}/blog/${params.slug}`
+  const articleSchema = getArticleSchema(
+    post.title,
+    postUrl,
+    post.date,
+    post.dateModified,
+    post.excerpt || post.title
+  )
+
   return (
-    <div className="px-6 py-24 pt-32">
+    <>
+      <StructuredData data={articleSchema} />
+      <div className="px-6 py-24 pt-32">
       <article className="max-w-4xl mx-auto">
         <Link 
           href="/blog" 
@@ -91,5 +104,6 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         </footer>
       </article>
     </div>
+    </>
   )
 }

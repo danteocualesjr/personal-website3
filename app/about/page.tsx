@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import StructuredData from '@/components/StructuredData'
 import { siteConfig } from '@/lib/site'
+import { getPersonSchema, getOrganizationSchema } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -18,7 +20,10 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="px-6 py-24 pt-32">
+    <>
+      <StructuredData data={getPersonSchema()} />
+      <StructuredData data={getOrganizationSchema()} />
+      <div className="px-6 py-24 pt-32">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-24 animate-in">
           About
@@ -144,5 +149,6 @@ export default function About() {
         </div>
       </div>
     </div>
+    </>
   )
 }
