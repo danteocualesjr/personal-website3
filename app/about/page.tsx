@@ -1,6 +1,19 @@
-export const metadata = {
-  title: 'About | Dante Cuales',
+import type { Metadata } from 'next'
+import { siteConfig } from '@/lib/site'
+
+export const metadata: Metadata = {
+  title: 'About',
   description: 'Founder of NativeStack AI and writer',
+  openGraph: {
+    title: 'About | Dante Cuales',
+    description: 'Founder of NativeStack AI and writer',
+    url: `${siteConfig.url}/about`,
+  },
+  twitter: {
+    card: 'summary',
+    title: 'About | Dante Cuales',
+    description: 'Founder of NativeStack AI and writer',
+  },
 }
 
 export default function About() {

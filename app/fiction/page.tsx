@@ -1,9 +1,22 @@
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/markdown'
+import type { Metadata } from 'next'
+import { siteConfig } from '@/lib/site'
 
-export const metadata = {
-  title: 'Fiction | Dante Cuales',
+export const metadata: Metadata = {
+  title: 'Fiction',
   description: 'Short stories and creative writing',
+  openGraph: {
+    title: 'Fiction | Dante Cuales',
+    description: 'Short stories and creative writing',
+    url: `${siteConfig.url}/fiction`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fiction | Dante Cuales',
+    description: 'Short stories and creative writing',
+  },
 }
 
 export default async function Fiction() {

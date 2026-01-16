@@ -1,16 +1,45 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { getPostBySlug, getAllPosts } from '@/lib/markdown'
+import { siteConfig } from '@/lib/site'
 
 export async function generateStaticParams() {
   const stories = await getAllPosts('fiction')
   return stories.map((story) => ({ slug: story.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const story = await getPostBySlug('fiction', params.slug)
-  if (!story) return { title: 'Not Found' }
-  return { title: `${story.title} | Dante Cuales` }
+  if (!story) {
+    return {
+      title: 'Not Found',
+    }
+  }
+
+  const storyUrl = `${siteConfig.url}/fiction/${params.slug}`
+  const storyTitle = `${story.title} | Dante Cuales`
+  const storyDescription = story.excerpt || story.title
+
+  return {
+    title: story.title,
+    description: storyDescription,
+    openGraph: {
+      title: storyTitle,
+      description: storyDescription,
+      url: storyUrl,
+      type: 'article',
+      publishedTime: story.date,
+      authors: [siteConfig.author],
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: storyTitle,
+      description: storyDescription,
+      creator: siteConfig.twitterHandle,
+    },
+  }
 }
 
 export default async function FictionStory({ params }: { params: { slug: string } }) {

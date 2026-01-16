@@ -1,8 +1,20 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import { siteConfig } from '@/lib/site'
 
-export const metadata = {
-  title: 'Work | Dante Cuales',
+export const metadata: Metadata = {
+  title: 'Work',
   description: 'Projects and ventures',
+  openGraph: {
+    title: 'Work | Dante Cuales',
+    description: 'Projects and ventures',
+    url: `${siteConfig.url}/portfolio`,
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Work | Dante Cuales',
+    description: 'Projects and ventures',
+  },
 }
 
 const projects = [
